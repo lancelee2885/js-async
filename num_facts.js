@@ -13,6 +13,7 @@ async function getOneFact (){
 
 
 // #2 Make multiple numbers facts in a single request
+// api has batch request
 async function getMultiFactsWithSingleRequest(){
 
   let resp = axios({ url: `${BASE_URL}/${rad_num}/trivia?json`})
@@ -48,6 +49,8 @@ async function getMultiFacts (){
     displayFacts(result.data.text);
   }
 }
+// make array of promises
+// Promise.all(arr of promises)
 
 function displayFacts(result){
   $(".facts").append(`<p>${result}</p>`)
